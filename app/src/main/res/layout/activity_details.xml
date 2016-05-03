@@ -1,0 +1,644 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.shivangshu.heartcare.Details">
+
+    <ScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:id="@+id/scrollView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" >
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="What is your Height"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/Height" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:weightSum="100"
+                android:id="@+id/HeightValues"
+                android:layout_width="fill_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/Height">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Feet: "
+                    android:layout_weight="10"
+                    android:id="@+id/Feet" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:layout_weight="30"
+                    android:id="@+id/FeetValue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Inches"
+                    android:layout_weight="10"
+                    android:id="@+id/Inches" />
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:layout_weight="30"
+                    android:id="@+id/InchesValue" />
+
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rr2"
+                android:layout_below="@+id/HeightValues">
+
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Submit Height"
+                    android:id="@+id/buttonHeight"
+                    android:layout_alignParentTop="true"
+                    android:layout_centerHorizontal="true" />
+
+                 </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_below="@+id/rr2"
+                android:visibility="invisible"
+                android:id="@+id/rlW">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="What is your weight?"
+                android:id="@+id/Weight"
+                android:layout_centerHorizontal="true"                />
+            <EditText
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:layout_below="@+id/Weight"
+                android:hint="Enter your weight!"
+                android:id="@+id/weightValue" />
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit Weight"
+                android:id="@+id/WeightSubmit"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/weightValue"
+                />
+
+            </RelativeLayout>
+
+
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_below="@+id/rlW"
+            android:visibility="invisible"
+            android:id="@+id/rlPH">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Have you ever had a heart attack or been told that you have heart disease?"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/prvsHeart" />
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/radioHistory"
+                android:layout_below="@+id/prvsHeart">
+
+                     <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Yes"
+                android:id="@+id/radioButtonYes" />
+
+
+
+                <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No"
+                                android:id="@+id/radioButtonNo" />
+            </RadioGroup>
+
+            <Button
+                style="?android:attr/buttonStyleSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:layout_below="@+id/radioHistory"
+                android:id="@+id/buttonHistory"
+                android:layout_centerHorizontal="true" />
+
+
+        </RelativeLayout>
+
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="invisible"
+                android:id="@+id/RLHBP"
+                android:layout_below="@+id/rlPH">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Have you ever been told that you have high blood pressure (hypertension) or have you ever been given blood pressure medication?"
+                    android:id="@+id/HBP" />
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioHBP"
+                    android:layout_below="@+id/HBP">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:id="@+id/radioButtonYesHBP" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+
+                        android:id="@+id/radioButtonNoHBP" />
+                </RadioGroup>
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Submit"
+                    android:layout_below="@+id/radioHBP"
+                    android:id="@+id/buttonHBP"
+                    android:layout_centerHorizontal="true" />
+
+                </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/RLHBP"
+                                android:visibility="invisible"
+                                android:id="@+id/RLChlrtl">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Have you ever been told that your total cholesterol level is high?"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/textChlsrtl" />
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:id="@+id/radioChlstrl"
+                    android:layout_below="@+id/textChlsrtl">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:id="@+id/radioButtonYesChlstrl" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+
+                        android:id="@+id/radioButtonNoChlstrl" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What is your total cholesterol level?"
+                    android:layout_centerHorizontal="true"
+                    android:layout_below="@+id/radioChlstrl"
+                    android:id="@+id/textViewChlrstrl" />
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioChlstrNumber"
+                    android:layout_below="@+id/textViewChlrstrl">
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="159 or lower"
+                        android:id="@+id/radioButton159" />
+
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="160-199"
+
+                        android:id="@+id/radioButton160" />
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="200-239"
+
+                    android:id="@+id/radioButton200" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="240-279"
+
+                    android:id="@+id/radioButton240" />
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="280 or higher"
+
+                    android:id="@+id/radioButton280" />
+
+        </RadioGroup>
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Submit"
+                    android:layout_below="@+id/radioChlstrNumber"
+                    android:id="@+id/buttonChlstrl"
+                    android:layout_centerHorizontal="true" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rldiet"
+                android:layout_below="@+id/RLChlrtl"
+                android:visibility="invisible">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Do you eat fish 2 or more times per week?"
+                    android:id="@+id/textViewFish" />
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioFishGroup"
+                    android:layout_below="@+id/textViewFish">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:id="@+id/radioFishYes" />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+
+                        android:id="@+id/radioFishNo" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/radioFishGroup"
+                    android:text="Do you eat 5 or more servings of fruit and vegetables per day?
+A serving is one medium apple, banana or orange, 1 cup of raw leafy vegetable (like spinach or lettuce), ½ cup of cooked beans or peas, ½ cup of chopped, cooked or canned fruit/vegetable or ¾ cup of fruit/vegetable juice."
+                    android:id="@+id/textViewFruit" />
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioFruit"
+                    android:layout_below="@+id/textViewFruit">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:id="@+id/radioFruitYes" />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+
+                        android:id="@+id/radioFruitNo" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/radioFruit"
+                    android:text="Do you eat 3 or more servings of whole grains per day (wheat bread, whole grain pasta, brown rice, oatmeal, whole grain breakfast cereal, bran or popcorn)?  A serving is one slice of bread, 1 ounce of breakfast cereal or ½ cup of cooked cereal, pasta or rice."
+                    android:id="@+id/textViewGrains" />
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioGrains"
+                    android:layout_below="@+id/textViewGrains">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:id="@+id/radioGrainsYes" />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+
+                        android:id="@+id/radioGrainsNo" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/radioGrains"
+                    android:text="Do you usually eat 3 servings of nuts per week?
+A serving is 1 ounce, which is about one airline packet of nuts or one tablespoon of peanut butter."
+                    android:id="@+id/textViewNuts" />
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioNuts"
+                    android:layout_below="@+id/textViewNuts">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:id="@+id/radioNutsYes" />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+
+                        android:id="@+id/radioNutsNo" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/radioNuts"
+                    android:text="Do you usually eat butter, lard, red meat, cheese or whole milk 2 or more times per day?"
+                    android:id="@+id/textViewButter" />
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioButter"
+                    android:layout_below="@+id/textViewButter">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:id="@+id/radioButterYes" />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+
+                        android:id="@+id/radioButterNo" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/radioButter"
+                    android:text="Do you eat stick margarine, vegetable shortening, store-bought baked goods (cookies, cakes, pies) or deep-fried fast foods on most days?"
+                    android:id="@+id/textViewMargarine" />
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioMargarine"
+                    android:layout_below="@+id/textViewMargarine">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:id="@+id/radioMargarineYes" />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+
+                        android:id="@+id/radioMargarineNo" />
+                </RadioGroup>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/radioMargarine"
+                    android:text="Do you eat oil-based salad dressing or use liquid vegetable oil for cooking on most days?"
+                    android:id="@+id/textViewOil" />
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioOil"
+                    android:layout_below="@+id/textViewOil">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:id="@+id/radioOilYes" />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+
+                        android:id="@+id/radioOilNo" />
+                </RadioGroup>
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Submit"
+                    android:layout_below="@+id/radioOil"
+                    android:id="@+id/buttonDiet"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rlsmoking"
+                android:visibility="invisible"
+                android:layout_below="@+id/rldiet">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Do you smoke cigarettes?"
+                    android:id="@+id/textViewCigg" />
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioCig"
+                    android:layout_below="@+id/textViewCigg">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:id="@+id/radioCigYes" />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No, I never smoked cigarettes"
+
+                        android:id="@+id/radioCigNo" />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="I used to smoke cigarettes, but I quit"
+
+                        android:id="@+id/radioCigNoQuit" />
+         </RadioGroup>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/radioCig"
+                    android:text="Are you exposed to smoke from other people's cigarettes or cigars?"
+                    android:id="@+id/textViewCiggExposed" />
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioCigDuration"
+                    android:layout_below="@+id/textViewCiggExposed">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Almost never"
+                        android:id="@+id/radioCigNever" />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Occasionally"
+
+                        android:id="@+id/radioCigOccasionally" />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Regularly"
+
+                        android:id="@+id/radioCigNoRegularly" />
+                </RadioGroup>
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Submit"
+                    android:layout_below="@+id/radioCigDuration"
+                    android:id="@+id/buttonCig"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rlpa"
+                android:layout_below="@+id/rlsmoking"
+                android:visibility="invisible">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Do you walk (or do other moderate activity) for at least 30 minutes on most days, or at least 3 hours per week?"
+                    android:id="@+id/textViewWalk" />
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioWalk"
+                    android:layout_below="@+id/textViewWalk">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:id="@+id/radioWalkYes" />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        android:id="@+id/radioWalkNo" />
+                    </RadioGroup>
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Submit"
+                    android:layout_below="@+id/radioWalk"
+                    android:id="@+id/buttonWalk"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rlfh"
+                android:layout_below="@+id/rlpa"
+                android:visibility="invisible">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Has anyone in your immediate family (mother, father, sister, brother) had a heart attack?"
+                    android:id="@+id/textViewfh" />
+                <RadioGroup
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radiofh"
+                    android:layout_below="@+id/textViewfh">
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:id="@+id/radiofhYes" />
+                    <RadioButton
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        android:id="@+id/radiofhNo" />
+                </RadioGroup>
+                <Button
+                    style="?android:attr/buttonStyleSmall"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Submit"
+                    android:layout_below="@+id/radiofh"
+                    android:id="@+id/buttonfh"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+
+</RelativeLayout>
