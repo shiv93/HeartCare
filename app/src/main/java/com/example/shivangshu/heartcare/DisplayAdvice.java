@@ -1,18 +1,24 @@
 package com.example.shivangshu.heartcare;
 
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 
-public class SelectProcess extends AppCompatActivity {
+import org.json.JSONException;
+import org.json.JSONObject;
+
+public class DisplayAdvice extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_process);
+        setContentView(R.layout.activity_display_advice);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -24,6 +30,33 @@ public class SelectProcess extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+        Intent getDetails=getIntent();
+        JSONObject details;
+        try {
+            details=new JSONObject(getDetails.getStringExtra("details"));
+            new PerformAnalysis().execute(details);
+        } catch (JSONException e) {
+            Log.d("error in Parsing JSON", getDetails.toString());
+        }
+
+
     }
+}
+
+class PerformAnalysis extends AsyncTask<JSONObject ,Void, String>
+        {
+
+    @Override
+    protected String doInBackground(JSONObject... details) {
+        for (JSONObject jobj:details
+             ) {
+            
+        }
+        return "";
+    }
+@Override
+protected void onPostExecute(String result) {
 
 }
+}
+

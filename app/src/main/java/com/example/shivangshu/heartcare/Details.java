@@ -1,5 +1,6 @@
 package com.example.shivangshu.heartcare;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.View;
@@ -10,6 +11,11 @@ import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class Details extends Activity {
 
     RelativeLayout weight,pastHistory, hightBP, cholestrol, diet, smoking, familyHistory, physicalActivy;
@@ -17,6 +23,7 @@ public class Details extends Activity {
     EditText feetValue, inchesValue, weightValue;
     RadioGroup history,highBPGroup, cholestrolConsumption, cholestrolValue, fishGroup, fruitGroup, grainsGroup, nutsGroup, butterGroup, margarineGroup, oilGroup, cig, cigExposed, physicalActivityRadio, familyHeartAttack;
     RadioButton historyValue,highBPValue, cholestrolYesNO, cholestrolRange, fishYesNo, fruitYesNo, grainsYesNo, nutsYesNo, butterYesNo, margarineYesNo, oilYesNo, cigYesNo,cigExposedRange,physicalActivityDuration, familyYesNo;
+    Map<String,String> details= new HashMap<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,6 +75,8 @@ public class Details extends Activity {
                     Toast.makeText(getApplicationContext(),"Please enter your height!", Toast.LENGTH_SHORT).show();
                 }
                 else{
+                    details.put("feet",feetValue.getText().toString());
+                    details.put("inches",feetValue.getText().toString());
                     weight.setVisibility(View.VISIBLE);
                 }
             }
@@ -80,6 +89,7 @@ public class Details extends Activity {
                     Toast.makeText(getApplicationContext(),"Please enter your Weight!",Toast.LENGTH_SHORT).show();
                 }
                 else{
+                    details.put("weight",weightValue.getText().toString());
                     pastHistory.setVisibility(View.VISIBLE);
                 }
             }
@@ -93,8 +103,9 @@ public class Details extends Activity {
                 historyValue=(RadioButton)findViewById(historyId);
                 String s1=historyValue.getText().toString();
                 hightBP.setVisibility(View.VISIBLE);
+                details.put("heartAttack",historyValue.getText().toString());
 
-            }
+                            }
         });
 
         buttonHBP.setOnClickListener(new View.OnClickListener() {
@@ -104,6 +115,8 @@ public class Details extends Activity {
                 highBPValue=(RadioButton)findViewById(highBPId);
                 String s2=highBPValue.getText().toString();
                 cholestrol.setVisibility(View.VISIBLE);
+                details.put("BP", highBPValue.getText().toString());
+
 
             }
         });
@@ -114,10 +127,13 @@ public class Details extends Activity {
                 int consumption=cholestrolConsumption.getCheckedRadioButtonId();
                 cholestrolYesNO=(RadioButton)findViewById(consumption);
                 String s3= cholestrolYesNO.getText().toString();
+                details.put("chlstrlYN",cholestrolYesNO.getText().toString());
+
 
                 int range= cholestrolValue.getCheckedRadioButtonId();
                 cholestrolRange=(RadioButton)findViewById(range);
                 String s4=cholestrolRange.getText().toString();
+                details.put("chlstrlRange",cholestrolRange.getText().toString());
                 diet.setVisibility(View.VISIBLE);
 
             }
@@ -128,30 +144,44 @@ public class Details extends Activity {
                 int fishId= fishGroup.getCheckedRadioButtonId();
                 fishYesNo=(RadioButton)findViewById(fishId);
                 String s4=fishYesNo.getText().toString();
+                details.put("fish",fishYesNo.getText().toString());
+
 
                 int fruitId= fruitGroup.getCheckedRadioButtonId();
                 fruitYesNo=(RadioButton)findViewById(fruitId);
                 String s5=fruitYesNo.getText().toString();
+                details.put("fruits",fruitYesNo.getText().toString());
+
 
                 int grainId= grainsGroup.getCheckedRadioButtonId();
                 grainsYesNo=(RadioButton)findViewById(grainId);
                 String s6=fishYesNo.getText().toString();
+                details.put("grains",grainsYesNo.getText().toString());
+
 
                 int nutsId= nutsGroup.getCheckedRadioButtonId();
                 nutsYesNo=(RadioButton)findViewById(nutsId);
                 String s7=fishYesNo.getText().toString();
+                details.put("nuts",nutsYesNo.getText().toString());
+
 
                 int butterId= butterGroup.getCheckedRadioButtonId();
                 butterYesNo=(RadioButton)findViewById(butterId);
                 String s8=fishYesNo.getText().toString();
+                details.put("butter",butterYesNo.getText().toString());
+
 
                 int margarineId= margarineGroup.getCheckedRadioButtonId();
                 margarineYesNo=(RadioButton)findViewById(margarineId);
                 String s9=fishYesNo.getText().toString();
+                details.put("margarine",margarineYesNo.getText().toString());
+
 
                 int oilId= oilGroup.getCheckedRadioButtonId();
                 oilYesNo=(RadioButton)findViewById(oilId);
                 String s10=fishYesNo.getText().toString();
+                details.put("oil",oilYesNo.getText().toString());
+
 
                 smoking.setVisibility(View.VISIBLE);
 
@@ -164,10 +194,13 @@ public class Details extends Activity {
                 int cigconfirm= cig.getCheckedRadioButtonId();
                 cigYesNo=(RadioButton)findViewById(cigconfirm);
                 String s11=cigYesNo.getText().toString();
+                details.put("cigYNQ",cigYesNo.getText().toString());
 
                 int cigDuration= cigExposed.getCheckedRadioButtonId();
                 cigExposedRange=(RadioButton)findViewById(cigDuration);
                 String s12= cigExposedRange.getText().toString();
+                details.put("cigDuration",cigExposedRange.getText().toString());
+
                 physicalActivy.setVisibility(View.VISIBLE);
             }
         });
@@ -178,14 +211,22 @@ public class Details extends Activity {
                 physicalActivityDuration=(RadioButton)findViewById(physicalActivityId);
                 String s13= physicalActivityDuration.getText().toString();
                                 familyHistory.setVisibility(View.VISIBLE);
+                details.put("physicalAct", physicalActivityDuration.getText().toString());
+
             }
         });
         buttonFamilyHistory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            int familyHistoryId= familyHeartAttack.getCheckedRadioButtonId();
+                int familyHistoryId= familyHeartAttack.getCheckedRadioButtonId();
                 familyYesNo=(RadioButton)findViewById(familyHistoryId);
                 String s14=familyYesNo.getText().toString();
+                details.put("familyHistory",familyYesNo.getText().toString());
+                JSONObject jobj = new JSONObject(details);
+                Intent sendDetails= new Intent(getApplicationContext(),DisplayAdvice.class);
+                sendDetails.putExtra("details",jobj.toString());
+                startActivity(sendDetails);
+                finish();
             }
         });
     }

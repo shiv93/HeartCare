@@ -65,7 +65,7 @@ public class Register extends Activity {
                     sexValue = (RadioButton) findViewById(sexId);
                     sexValueString = sexValue.getText().toString();
                    conn.insert(nameValue,sexValueString.substring(0,1),ageValue);
-                    Intent callToBluetooth= new Intent(getApplicationContext(),BluetoothData.class);
+                    Intent callToBluetooth= new Intent(getApplicationContext(),ProcessSelect.class);
                     startActivity(callToBluetooth);
 
                 }
@@ -74,7 +74,7 @@ public class Register extends Activity {
         continuee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent selectProcess = new Intent(getApplicationContext(),BluetoothData.class);
+                Intent selectProcess = new Intent(getApplicationContext(),ProcessSelect.class);
                 startActivity(selectProcess);
             }
         });

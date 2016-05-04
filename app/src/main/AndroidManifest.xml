@@ -2,6 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.shivangshu.heartcare">
 
+    <uses-permission android:name="android.permission.CALL_PHONE">
+    </uses-permission>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -22,14 +25,22 @@
             android:name=".Register"
             android:label="@string/title_activity_register" />
         <activity
-            android:name=".BluetoothData"
+            android:name=".ProcessSelect"
             android:label="@string/title_activity_bluetooth_data" />
         <activity
             android:name=".Details"
             android:label="@string/title_activity_details" />
         <activity
-            android:name=".SelectProcess"
-            android:label="@string/title_activity_select_process"
+            android:name=".DisplayAdvice"
+            android:label="@string/title_activity_display_advice"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".BluetoothData"
+            android:label="@string/title_activity_bluetooth_data"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Calling"
+            android:label="@string/title_activity_calling"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
