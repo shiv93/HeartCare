@@ -2,7 +2,10 @@ package com.example.shivangshu.heartcare;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.Activity;
+import android.support.design.widget.FloatingActionButton;
+import android.support.design.widget.Snackbar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,7 +15,7 @@ import android.widget.Toast;
 
 import helper.connectivity;
 
-public class Register extends Activity {
+public class Register extends AppCompatActivity {
 
     EditText name,age;
     connectivity conn;
@@ -21,10 +24,22 @@ public class Register extends Activity {
     Button register, continuee;
 
     static String nameValue,ageValue,sexValueString;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_register);
+        setContentView(R.layout.activity_register1);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
         conn= new connectivity(Register.this);
         register=(Button)findViewById(R.id.Register);
         continuee=(Button)findViewById(R.id.Continue);
@@ -42,8 +57,7 @@ public class Register extends Activity {
                 case 'F':
                     sex.check(R.id.F);
                     break;
-                default:
-                    sex.check(R.id.N);
+
             }
 
             continuee.setText("Continue as "+ getIntent.getStringExtra("name").toString() );
@@ -53,20 +67,19 @@ public class Register extends Activity {
             @Override
             public void onClick(View v) {
 
-                nameValue=name.getText().toString();
-                ageValue=age.getText().toString();
-                int sexId=sex.getCheckedRadioButtonId();
+                nameValue = name.getText().toString();
+                ageValue = age.getText().toString();
+                int sexId = sex.getCheckedRadioButtonId();
 
 
-                if(nameValue.equalsIgnoreCase("")||ageValue.equalsIgnoreCase("")||ageValue.equalsIgnoreCase("")|| sexId==0){
-                    Toast.makeText(getApplicationContext(),"Please fill all the required field!",Toast.LENGTH_SHORT).show();
-                }
-                else{
+                if (nameValue.equalsIgnoreCase("") || ageValue.equalsIgnoreCase("") || ageValue.equalsIgnoreCase("") || sexId == 0) {
+                    Toast.makeText(getApplicationContext(), "Please fill all the required field!", Toast.LENGTH_SHORT).show();
+                } else {
                     sexValue = (RadioButton) findViewById(sexId);
                     sexValueString = sexValue.getText().toString();
-                   conn.insert(nameValue,sexValueString.substring(0,1),ageValue);
-                    Intent callToBluetooth= new Intent(getApplicationContext(),ProcessSelect.class);
-                    callToBluetooth.putExtra("Age",ageValue);
+                    conn.insert(nameValue, sexValueString.substring(0, 1), ageValue);
+                    Intent callToBluetooth = new Intent(getApplicationContext(), ProcessSelect.class);
+                    callToBluetooth.putExtra("Age", ageValue);
                     startActivity(callToBluetooth);
 
                 }
@@ -81,7 +94,6 @@ public class Register extends Activity {
                 startActivity(selectProcess);
             }
         });
-
 
     }
 

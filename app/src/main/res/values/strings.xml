@@ -7,4 +7,6 @@
     <string name="title_activity_select_process">SelectProcess</string>
     <string name="title_activity_display_advice">DisplayAdvice</string>
     <string name="title_activity_calling">Calling</string>
+    <string name="title_activity_register1">Register1</string>
+    <string name="title_activity_process_select1">ProcessSelect1</string>
 </resources>

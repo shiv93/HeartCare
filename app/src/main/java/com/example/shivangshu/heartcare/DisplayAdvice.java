@@ -21,7 +21,7 @@ public class DisplayAdvice extends AppCompatActivity {
     private double cBmi;
     private int cChl, cFam;
     String suggestion;
-    private int cSmok;
+    private int cSmok, counter;
     private int cPhy;
     private double cAge;
     TextView display;
@@ -34,6 +34,7 @@ public class DisplayAdvice extends AppCompatActivity {
         setContentView(R.layout.activity_display_advice);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+        counter=1;
         display=(TextView)findViewById(R.id.Display);
         call=(Button)findViewById(R.id.Call);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -94,7 +95,8 @@ public class DisplayAdvice extends AppCompatActivity {
                 cSmok=1;
                             }
             else {
-                suggestion="You should immediately quit smoking"+"\n";
+                suggestion=Integer.toString(counter)+".   You should immediately quit smoking"+"\n";
+                counter++;
                 cSmok=0;
             }
 
@@ -103,7 +105,8 @@ public class DisplayAdvice extends AppCompatActivity {
                 cPhy=1;
             }
             else{
-                suggestion.concat("Perform atleast 3 hours of physical activity per week!"+"\n");
+                suggestion.concat(Integer.toString(counter)+".   Perform atleast 3 hours of physical activity per week!"+"\n");
+                counter++;
                 cPhy=0;
 
             }
@@ -124,13 +127,16 @@ public class DisplayAdvice extends AppCompatActivity {
             }
             else{
                 if(details.getString("oil").equalsIgnoreCase("yes")){
-                    suggestion.concat("You should reduce the intake of oily foods!" + "\n");
+                    suggestion.concat(Integer.toString(counter)+".   You should reduce the intake of oily foods!" + "\n");
+                    counter++;
                 }
                 if (details.getString("fruits").equalsIgnoreCase("No")) {
-                    suggestion.concat("You must start consuming atleast 750 grams of fruits per week!" + "\n");
+                    suggestion.concat(Integer.toString(counter)+".   You must start consuming atleast 750 grams of fruits per week!" + "\n");
+                    counter++;
                 }
                 if(cBmiH==1) {
-                    suggestion.concat("Your BMI level is high. Please follow a healthy diet with regular physical activity" + "\n");
+                    suggestion.concat(Integer.toString(counter)+".   Your BMI level is high. Please follow a healthy diet with regular physical activity" + "\n");
+                    counter++;
                 }
                 display.setText("RECCOMENDATIONS FOR YOU :"+"\n"+ suggestion);
 

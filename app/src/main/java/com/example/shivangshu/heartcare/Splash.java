@@ -1,16 +1,12 @@
 package com.example.shivangshu.heartcare;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.database.Cursor;
 import android.graphics.drawable.AnimationDrawable;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.app.Activity;
-import android.os.Handler;
 import android.util.Log;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.ImageView;
 
 import helper.connectivity;
@@ -61,7 +57,7 @@ public class Splash extends Activity {
             Thread timer = new Thread(){
                 public void run(){
                     try{
-                        sleep(3400);
+                        sleep(3700);
                     }
                     catch(InterruptedException e){
                         e.printStackTrace();
