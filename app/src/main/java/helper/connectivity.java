@@ -77,6 +77,8 @@ public class connectivity extends SQLiteOpenHelper {
         return cursor;
     }
 
+
+
     public String searchName(){
         SQLiteDatabase data = getReadableDatabase();
         String query="select Name from "+table+" where id=(select max(id) from " +table+")";

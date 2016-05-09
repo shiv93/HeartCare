@@ -23,6 +23,8 @@ public class ProcessSelect extends Activity {
         super.onStart();
         final Dialog dialog = new Dialog(this);
         dialog.setContentView(R.layout.content_select_process);
+        Intent getIntent=getIntent();
+        final String age=getIntent.getStringExtra("Age");
         dialog.setTitle("Dialog box");
 
         Button button = (Button) dialog.findViewById(R.id.buttonCheckup);
@@ -31,6 +33,7 @@ public class ProcessSelect extends Activity {
             @Override
             public void onClick(View v) {
                 Intent heartCheckup = new Intent(getApplicationContext(),Details.class);
+                heartCheckup.putExtra("Age",age);
                 startActivity(heartCheckup);
             }
         });
@@ -38,6 +41,7 @@ public class ProcessSelect extends Activity {
             @Override
             public void onClick(View v) {
                 Intent getBluetoothData= new Intent(getApplicationContext(),Calling.class);
+                getBluetoothData.putExtra("Age",age);
                 startActivity(getBluetoothData);
             }
         });

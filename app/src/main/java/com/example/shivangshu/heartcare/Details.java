@@ -28,6 +28,8 @@ public class Details extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
+        Intent getIntent=getIntent();
+        final String age=getIntent.getStringExtra("Age");
         buttonHeight=(Button)findViewById(R.id.buttonHeight);
         buttonHistory=(Button)findViewById(R.id.buttonHistory);
         buttonHBP=(Button)findViewById(R.id.buttonHBP);
@@ -222,6 +224,7 @@ public class Details extends Activity {
                 familyYesNo=(RadioButton)findViewById(familyHistoryId);
                 String s14=familyYesNo.getText().toString();
                 details.put("familyHistory",familyYesNo.getText().toString());
+                details.put("Age",age);
                 JSONObject jobj = new JSONObject(details);
                 Intent sendDetails= new Intent(getApplicationContext(),DisplayAdvice.class);
                 sendDetails.putExtra("details",jobj.toString());

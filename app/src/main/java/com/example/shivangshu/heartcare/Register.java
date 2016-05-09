@@ -66,6 +66,7 @@ public class Register extends Activity {
                     sexValueString = sexValue.getText().toString();
                    conn.insert(nameValue,sexValueString.substring(0,1),ageValue);
                     Intent callToBluetooth= new Intent(getApplicationContext(),ProcessSelect.class);
+                    callToBluetooth.putExtra("Age",ageValue);
                     startActivity(callToBluetooth);
 
                 }
@@ -74,7 +75,9 @@ public class Register extends Activity {
         continuee.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ageValue=age.getText().toString();
                 Intent selectProcess = new Intent(getApplicationContext(),ProcessSelect.class);
+                selectProcess.putExtra("Age",ageValue);
                 startActivity(selectProcess);
             }
         });
