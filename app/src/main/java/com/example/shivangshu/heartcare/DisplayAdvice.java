@@ -47,6 +47,7 @@ public class DisplayAdvice extends AppCompatActivity {
         });
         final Intent getDetails=getIntent();
         JSONObject details;
+        suggestion="";
         try {
             details=new JSONObject(getDetails.getStringExtra("details"));
             double feet=Integer.parseInt(details.getString("feet"))*0.3048;

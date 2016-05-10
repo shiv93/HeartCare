@@ -2,6 +2,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.shivangshu.heartcare">
 
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
@@ -42,6 +43,10 @@
         <activity
             android:name=".ProcessSelect"
             android:label="@string/title_activity_process_select1"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".HeartDetails"
+            android:label="@string/title_activity_heart_details"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

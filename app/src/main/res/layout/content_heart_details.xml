@@ -9,16 +9,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="com.example.shivangshu.heartcare.BluetoothData"
-    tools:showIn="@layout/activity_bluetooth_data2">
+    tools:context="com.example.shivangshu.heartcare.HeartDetails"
+    tools:showIn="@layout/activity_heart_details">
 
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:visibility="invisible"
-        android:id="@+id/buttonInvisible"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
 </RelativeLayout>

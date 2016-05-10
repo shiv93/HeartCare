@@ -48,7 +48,7 @@ public class ProcessSelect extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent getBluetoothData = new Intent(getApplicationContext(), Calling.class);
+                Intent getBluetoothData = new Intent(getApplicationContext(), BluetoothData.class);
                 getBluetoothData.putExtra("Age", age);
                 startActivity(getBluetoothData);
             }
