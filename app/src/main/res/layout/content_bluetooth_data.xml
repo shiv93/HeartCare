@@ -13,12 +13,59 @@
     tools:showIn="@layout/activity_bluetooth_data2">
 
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:hint="Please enter your recorded heart rate"
+        android:id="@+id/HeartRate"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:ems="10"
+        android:id="@+id/SPO2"
+        android:hint="Please Enter your Sp02 level as recorded."
+        android:layout_below="@+id/HeartRate"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="Submit Values"
+        android:id="@+id/buttonHrtSp02"
+        android:layout_below="@+id/SPO2"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
         android:text=""
-        android:visibility="invisible"
-        android:id="@+id/buttonInvisible"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_below="@+id/buttonHrtSp02"
+        android:id="@+id/textViewFaltu" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/scrollView2"
+        android:layout_below="@+id/textViewFaltu"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" >
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text=""
+
+            android:id="@+id/textViewDisplay" />
+    </ScrollView>
+
 </RelativeLayout>
