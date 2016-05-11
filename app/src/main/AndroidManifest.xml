@@ -47,6 +47,10 @@
         <activity
             android:name=".HeartDetails"
             android:label="@string/title_activity_heart_details"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".Safe"
+            android:label="@string/title_activity_safe"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 

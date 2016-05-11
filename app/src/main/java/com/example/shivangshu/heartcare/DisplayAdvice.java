@@ -106,7 +106,7 @@ public class DisplayAdvice extends AppCompatActivity {
                 cPhy=1;
             }
             else{
-                suggestion.concat(Integer.toString(counter)+".   Perform atleast 3 hours of physical activity per week!"+"\n");
+                suggestion=suggestion.concat(Integer.toString(counter)+".   Perform atleast 3 hours of physical activity per week!"+"\n");
                 counter++;
                 cPhy=0;
 
@@ -128,18 +128,18 @@ public class DisplayAdvice extends AppCompatActivity {
             }
             else{
                 if(details.getString("oil").equalsIgnoreCase("yes")){
-                    suggestion.concat(Integer.toString(counter)+".   You should reduce the intake of oily foods!" + "\n");
+                    suggestion=suggestion.concat(Integer.toString(counter)+".   You should reduce the intake of oily foods!" + "\n");
                     counter++;
                 }
                 if (details.getString("fruits").equalsIgnoreCase("No")) {
-                    suggestion.concat(Integer.toString(counter)+".   You must start consuming atleast 750 grams of fruits per week!" + "\n");
+                    suggestion=suggestion.concat(Integer.toString(counter)+".   You must start consuming atleast 750 grams of fruits per week!" + "\n");
                     counter++;
                 }
                 if(cBmiH==1) {
-                    suggestion.concat(Integer.toString(counter)+".   Your BMI level is high. Please follow a healthy diet with regular physical activity" + "\n");
+                    suggestion=suggestion.concat(Integer.toString(counter)+".   Your BMI level is high. Please follow a healthy diet with regular physical activity" + "\n");
                     counter++;
                 }
-                display.setText("RECCOMENDATIONS FOR YOU :"+"\n"+ suggestion);
+                display.setText("RECCOMENDATIONS FOR YOU :"+"\n\n"+ suggestion);
 
 
 

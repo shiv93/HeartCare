@@ -24,7 +24,7 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Heart Checkup"
+            android:text="Heart Regular Checkup"
             android:layout_weight="49"
             android:background="@color/colorPrimaryDark"
             android:id="@+id/buttonCheckup"
@@ -41,7 +41,7 @@
             style="?android:attr/buttonStyleSmall"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Heart Checkup 1"
+            android:text="Heart Attack Check"
 
             android:layout_weight="49"
             android:id="@+id/buttonCheckup1"
